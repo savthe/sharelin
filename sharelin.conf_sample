@@ -1,0 +1,56 @@
+UserName = User
+
+#Log file(~/.sharelin/sharelin.log) maximum size in Mb (0 to disable):
+LogSize = 5
+
+#How many hubs to connect
+MaxHubs = 3
+
+#Maximum values in kilobytes of bandwidth in and out
+MaxBWin = 64
+MaxBWout = 64
+
+#Port number to use for G2 network
+ListenPort = 6346
+
+#Maximum download connections to other hosts
+MaxDownloads = 50
+
+#Maximum number of files that can be downloaded simultaneously (other files are put in the queue)
+MaxConcurrentFiles = 50
+
+#If your machine is able to accept incomming connections, set Firewalled = no
+#If you set no, Sharelin will consider itself firewalled until it discovers self ip (it does
+#on first successful hub connection).
+Firewalled = auto
+
+#Maximum number of active uploads
+MaxUploads = 10
+
+#Maximum queued uploaders
+QueueSize = 20
+
+#Maximum uploads from one IP
+UploadsPerHost = 2
+
+#Folder for downloaded files
+Complete = /mnt/home/john/.sharelin/complete
+
+#Folder for temporary files
+Incomplete = /mnt/home/john/.sharelin/incomplete
+
+#Folders to share
+Share = /mnt/ntfs/video; /home/john/music
+
+#Hashing speed in Mb per second:
+HashRate = 7
+
+#Default number of lines in tables in web ui.
+WuiPageLines = 50
+
+#Uncomment to enable web UI
+#WebUIPort = 4080
+
+#Uncomment to enable remote UI (e.g. web UI). Change IPs to your own
+#RemoteRanges = 192.168.1.1-192.168.1.4; 127.0.0.1
+

@@ -1,0 +1,1 @@
+^[bold magenta]Sharelin >> ^[]

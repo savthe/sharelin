@@ -1,0 +1,98 @@
+1. REQUIREMENTS 
+	g++
+	ZLib
+	Boost C++ libraries >= 1.45
+	cmake >= 2.6
+
+1.1 Ubuntu packets (for Ubuntu users)
+	g++
+	libboost-all-dev 
+	zlib1g-dev (its zlib_ONE_g, not zlib_L_g).
+	cmake
+
+2. RESOURCES
+	Sharelin home: http://sharelin.sf.net
+
+3. BUILDING
+
+3.1 Building
+	Suppose we have sharelin-0.2.0-src.tar.gz  
+	Run following commands to build sharelin:
+
+	1) tar gzvf sharelin-0.2.0-src.tar.gz
+	2) cd sharelin-0.2.0
+	3) cmake . (don't forget the dot =) )
+	4) make (or gmake on FreeBSD and some other OS)
+
+	Built binary file will be in ./sharelin/ folder. 
+
+3.2 Installing	
+	You could run sharelin without installation by running sharelin/sharelin
+	(after you build it). But be sure to copy webui folder to ~/.sharelin/ 
+
+	To install sharelin, run "make install" with root privilages. It will copy 
+	binary file into your system default bin folder and webui into default 
+	share (to share/sharelin/) folder.
+
+3.3 Uninstalling
+	When you run "make install" the file install_manifest.txt will be created.
+	It contains all the file paths that are installed.
+	Run "make uninstall" to delete the installed files.
+
+4. USAGE
+
+4.1 Command line options
+	-h, --help          display help
+	-d, --daemon        run in background
+	-v n, --verbose n   set verbose level to n
+	-c, --configure	    start configurer to set the options
+
+4.2 Configuration file (~/.sharelin/sharelin.conf)
+	If sharelin.conf doesn't exist, Sharelin will create it on the first run.
+	You can run Sharelin, then shut it down (by pressing CTRL+C) and edit
+	~/.sharelin/sharelin.conf
+	See sharealin.conf_sample for options explanations. 
+	You can rename it to sharelin.conf, edit and use.
+
+4.3 Web UI
+	To enable Web UI (webui) add some allowed ip ranges (see RemoteRanges 
+	option) and specify web UI port (see WebUIPort) option.
+
+4.4 Telnet commands
+	nb - current G2 neighbors
+	exit - exit telnet
+	kill - kill core
+	set var=value - sets the value of the internal variable. Example: set maxhubs=3
+	sr - starts new search. Parameters: dn (descriptive name), min (minimum size),
+		max (maximum size), media (media type), ext (extensions). Example:
+		sr dn = "Debian Linux" min = 500Mb
+		sr dn = "Debian Linux"
+	srs - list all current searches
+	srdel - removes search by id. Example: srdel id=2
+	srstop - stops search by id. Example: srstop id=5
+	srresume - resumes stopped search by id. Example: srresume id=5
+	srshow - list results of the search by id. Example srshow id=2
+	dl - starts new download. To download a file from search results, use
+		search ID(sr) and result ID(id) within search. Example:
+		dl sr=2 id=341
+	dls - list all current downloads
+	dlstop - stops download by id. Example: dlstop id=1
+	dldel - removes download by id. Example: dlremove id=1
+	dlresume - resumes stopped download by id. Example: dlresume id=1
+	dlinfo - shows information about download. Example: dlinfo id=1
+	ups - list current uploads
+	dlhist - list downloads history
+	uplhist - list upload history
+	sync - request share synchronization
+
+5. BUGS
+	There are bugs. If you've seen one, please notify me: savthe@gmail.com . 
+	It would be great if you added some technical details.
+
+6. ACKNOWLEDGEMENTS
+Sharelin logo graphics by Michael Flug.
+Thanks for bug reports and proposals to all who sent them, especially to: Alex_H, Datz, Dcat, Jonne, Zigotozor.
+
+Web UI icons: 
+eXperience (http://art.gnome.org/themes/icon/1096) 
+Blender Crystal (http://gnome-look.org/content/show.php/Blended+Crystal?content=58001)
